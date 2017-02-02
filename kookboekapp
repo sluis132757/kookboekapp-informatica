@@ -1,0 +1,56 @@
+<html>
+	<head>
+		<font color = "#00FF00"</font>
+		<title>KookboekApp</title>
+		<meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
+	</head>
+	<body> 
+		<form onsubmit="kookRecept()">
+			<fieldset>      
+				<font size = "+4" </font>
+				<legend>Vul waarden in voor het recept:
+				</legend>
+				<table>
+						
+					<td>Ingrediënt 1:</td>
+					<td><input type="text" id="i1" /></td>
+				</tr>
+				<tr>
+					<td>Ingrediënt 2:</td>
+					<td><input type="text" id="i2" /></td>
+				</tr>
+				<tr>
+					<td>Bewerking:</td>
+					<td><input type="text" id="b" /></td>
+				</tr>
+				<tr>
+					<td>Duur:</td>
+					<td><input type="text" id="d" /></td>
+					</tr>
+					<tr>
+						<td>Uitwerking:</td>
+						<td><p id="u">
+						</p></td>
+				</tr>
+				</table>
+			</fieldset>
+			<br/>
+			<input type="button" value="kookRecept" onClick="kookRecept();" />
+		</form>
+		<p id="r"></p>
+
+		<script>
+	  function kookRecept() {
+			// waarden ophalen uit HTML-formulier
+		var Ingrediënt1 = document.getElementById("i1");
+		var Ingrediënt2 = document.getElementById("i2");
+		var Bewerking = document.getElementById("b");
+		var Duur = document.getElementById("d");
+			// variabelen samenvoegen tot recepttekst
+			var recept = "Voeg" + " " + Ingrediënt1.value + " " + "en" + " "  + Ingrediënt2.value + " "+ "samen en" + " " + Bewerking.value + " " + "dit voor" + " " + Duur.value;
+			// recept in beeld zetten
+			document.getElementById("u").innerHTML = recept;
+		}
+		</script>
+	</body>
+</html>
